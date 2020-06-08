@@ -8,6 +8,12 @@ namespace ConsoleApp3.API_Methods
 {
     public class CardManipulationMethods
     {
+        /// <summary>
+        /// Calculate thr card color with highest sum of card values.
+        /// </summary>
+        /// <param name="cards"></param>
+        /// <param name="cardColors"></param>
+        /// <returns></returns>
         public static string GetCardColorWithHighestSumOfCardValues(List<Card> cards, List<CardColor> cardColors)
         {
             var cardsGroupedByColor = cards.GroupBy(card => card.color_id);
@@ -19,6 +25,12 @@ namespace ConsoleApp3.API_Methods
             return color;
         }
 
+        /// <summary>
+        /// Calculate the total points of the winning sets contained in the draw of cards.
+        /// </summary>
+        /// <param name="cards"></param>
+        /// <param name="winnigSets"></param>
+        /// <returns></returns>
         public static int CalculateTotalPointsOfWinnigSets(List<Card> cards, List<WinningSet> winnigSets)
         {
             int totalPoints = 0;
@@ -56,6 +68,11 @@ namespace ConsoleApp3.API_Methods
             return totalPoints;
         }
 
+        /// <summary>
+        /// Calculate minimum number of groups, with sum of 10 points max.
+        /// </summary>
+        /// <param name="cards"></param>
+        /// <returns></returns>
         public static int CalculateNumberOfGroups(List<Card> cards)
         {
             cards = cards.OrderBy(c => c.value).ToList();

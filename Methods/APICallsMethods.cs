@@ -12,6 +12,11 @@ namespace ConsoleApp3.API_Methods
 {
     public class APICallsMethods
     {
+        /// <summary>
+        /// Get card types and winning sets.
+        /// </summary>
+        /// <param name="linkUri"></param>
+        /// <returns></returns>
         public static async Task<GetDataCallDTO> GetData(string linkUri)
         {
             var client = new HttpClient();
@@ -22,6 +27,12 @@ namespace ConsoleApp3.API_Methods
             return result;
         }
 
+        /// <summary>
+        /// Draw cards.
+        /// </summary>
+        /// <param name="linkUri"></param>
+        /// <param name="amount"></param>
+        /// <returns></returns>
         public static async Task<List<Card>> DrawCards(string linkUri, int amount)
         {
             var client = new HttpClient();
@@ -32,6 +43,12 @@ namespace ConsoleApp3.API_Methods
             return result;
         }
 
+        /// <summary>
+        /// Post results.
+        /// </summary>
+        /// <param name="linkUri"></param>
+        /// <param name="results"></param>
+        /// <returns></returns>
         public static async Task PostResults(string linkUri, Results results)
         {
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(linkUri);
